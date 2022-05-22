@@ -1,0 +1,53 @@
+﻿CREATE PROCEDURE [dbo].[UpdateMovieRecord] @Id INT
+	,@Name VARCHAR(500)
+	,@YOR NVARCHAR(50)
+	,@Plot VARCHAR(500)
+	
+	,@ProducerId INT
+	,@Actors VARCHAR(500)
+	,@Genres VARCHAR(500)
+AS
+UPDATE Movies
+SET Name = @Name,
+    YOR = @YOR,
+    Plot = @Plot,
+   
+    ProducerId = @ProducerId
+WHERE Id = @Id
+DELETE
+FROM MovieActorMapping
+WHERE MovieId = @Id 
+
+DELETE
+FROM MovieGenreMapping
+WHERE MovieId = @Id 
+
+INSERT INTO MovieActorMapping (
+    MovieId,
+    ActorId
+)
+SELECT (
+    SELECT @Id 
+    )
+    ,ActorTable.Actors
+
+FROM (
+
+SELECT value AS Actors
+FROM string_split(@Actors, ',')
+) ActorTable
+
+INSERT INTO MovieGenreMapping (
+    MovieId,
+    GenreId
+    )
+
+SELECT (
+    SELECT @Id 
+    )
+    ,GenreTable.Genre
+
+FROM (
+SELECT value AS Genre
+FROM string_split(@Genres, ',')
+) GenreTable

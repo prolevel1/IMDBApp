@@ -1,0 +1,6 @@
+C:\Users\LAKSHMESHWAR\Desktop\BitBucket\assignments\IMDBApp\IMDBTest\obj\Debug\netcoreapp3.1\IMDBTest.Test.csprojAssemblyReference.cache
+C:\Users\LAKSHMESHWAR\Desktop\BitBucket\assignments\IMDBApp\IMDBTest\obj\Debug\netcoreapp3.1\IMDBTest.Test.AssemblyInfoInputs.cache
+C:\Users\LAKSHMESHWAR\Desktop\BitBucket\assignments\IMDBApp\IMDBTest\obj\Debug\netcoreapp3.1\IMDBTest.Test.AssemblyInfo.cs
+C:\Users\LAKSHMESHWAR\Desktop\BitBucket\assignments\IMDBApp\IMDBTest\obj\Debug\netcoreapp3.1\IMDBTest.Test.csproj.CoreCompileInputs.cache
+C:\Users\LAKSHMESHWAR\Desktop\BitBucket\assignments\IMDBApp\IMDBTest\obj\Debug\netcoreapp3.1\IMDBTest.Test.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\LAKSHMESHWAR\Desktop\BitBucket\assignments\IMDBApp\IMDBTest\obj\Debug\netcoreapp3.1\IMDBTest.Test.MvcApplicationPartsAssemblyInfo.cache

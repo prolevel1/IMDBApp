@@ -1,0 +1,42 @@
+﻿CREATE PROCEDURE [dbo].[sp_AddMovie] @Name NVARCHAR(50)
+    
+    ,@YOR NVARCHAR(50)
+	,@Plot NVARCHAR(50)
+    ,@ProducerId INT
+    ,@ActorId NVARCHAR(50)
+    ,@GenreId NVARCHAR(50)
+AS
+BEGIN
+    DECLARE @MovieId INT
+
+	--Insert into movie table
+    INSERT INTO dbo.Movies (
+        Name
+        ,YOR
+        ,Plot
+       ,ProducerId
+        )
+    VALUES (
+        @Name
+        ,@YOR
+		,@Plot
+        ,@ProducerId
+        )
+		 SET @MovieID = Scope_identity()
+		    
+    INSERT INTO dbo.MovieActorMapping(
+        MovieId
+        ,ActorId
+        )
+    SELECT @MovieId [MovieId]
+        ,[value] [ActorId]
+    FROM string_split(@ActorId, ',')
+	--insert 
+    INSERT INTO dbo.MovieGenreMapping(
+        MovieId
+        ,GenreId
+        )
+    SELECT @MovieId [MovieId]
+        ,[value] [GenreId]
+    FROM string_split(@GenreId, ',')
+END
